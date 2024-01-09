@@ -36,21 +36,21 @@
         <nav id="main-nav">
             <div class="nav-link">
                 <a href="index.html" class="brand">Osaka Salmon University!</a>
-                <a href="new.html" class="pseudo button">最新</a>
-                <a href="hot.html" class="pseudo button">热门</a>
-                <a href="genre.html" class="pseudo button">分类</a>
+                <a href="new.html" class="pseudo button">New</a>
+                <a href="hot.html" class="pseudo button">Popular</a>
+                <a href="genre.html" class="pseudo button">Genres</a>
             </div>
             <div class="nav-search">
                 <form action="search.html">
-                    <input type="text" id="inputtext"name="q" placeholder="谱面关键词或sid"/>
+                    <input type="text" name="q" placeholder="Search Maps or SID"/>
                     <input type="image" class="search-button" src="research.svg">
                 </form>
             </div>
             <div class="nav-tool">
-                <a href="local.html" class="pseudo button">收藏夹</a>
-                <a href="faq.html" class="pseudo button">常见问题</a>
-                <a href="settings.html" class="pseudo button">设置</a>
-                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">进入全屏</a>
+                <a href="local.html" class="pseudo button">Favorites</a>
+                <a href="faq.html" class="pseudo button">FAQ</a>
+                <a href="settings.html" class="pseudo button">Settings</a>
+                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">Fullscreen</a>
             </div>
         </nav>
 
@@ -59,10 +59,10 @@
                 <div class="beatmap-list" id="beatmap-list">
                     <!-- to be filled in script -->
                 </div>
-                <div class="button" style="width:100%; margin-bottom: 10px;" id="btnmore">加载更多</div>
-                <div class="text">推荐使用最新版本 Firefox 或 Chrome.</div>
-                <div class="text">内测版v1.4.3. <a href="https://github.com/111116/osu">Github</a></div>
-                <div class="text">由<a href="https://osu.sayobot.cn/">Sayobot</a>提供谱面</div>
+                <div class="button" style="width:100%; margin-bottom: 10px;" id="btnmore">View More</div>
+                <div class="text">Use the latest Firefox and Chromium-based browsers for a better experience!</div>
+                <div class="text">Current Version: v1.4.3. <a href="https://github.com/PopCat19/weboss">Github</a></div>
+                <div class="text">API powered by <a href="https://osu.sayobot.cn/">Sayobot</a></div>
             </div>
             <!-- <div class="side-panel">
                 to be activated in script
@@ -104,7 +104,7 @@
                 }
                 else {
                     if (window.list_endid == 0)
-                        document.getElementById("btnmore").innerText = "已经没有更多了哦！";
+                        document.getElementById("btnmore").innerText = "No More!";
                     else
                         addBeatmapList("https://api.sayobot.cn/beatmaplist?0=20&1=" + window.list_endid + "&2=4&3=" + keyword + "&5=1");
                 }

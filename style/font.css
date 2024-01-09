@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'Exo 2';
-  font-style: italic;
+  font-family: 'Fredoka', sans-serif;
+  font-style: semibold;
   font-weight: 600;
-  src: local('Exo 2 SemiBold Italic'), local('Exo2-SemiBoldItalic'), url(600i.ttf) format('truetype');
+  src: local('Fredoka SemiBold Italic'), local('Fredoka-SemiBold'), url(Fredoka-SemiBold.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Exo 2 Regular'), local('Exo2-Regular'), url(400.ttf) format('truetype');
+  font-family: 'Fredoka', sans-serif;
+  font-style: medium;
+  font-weight: 500;
+  src: local('Fredoka Medium'), local('Fredoka-Medium'), url(Fredoka-Medium.ttf) format('truetype');
 }
 @font-face {
   font-family: 'fontello';
@@ -22,7 +22,7 @@
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
-  speak: none;
+  speak-as: none;
  
   display: inline-block;
   text-decoration: inherit;

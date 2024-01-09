@@ -1,17 +1,17 @@
 @charset "UTF-8"; 
 
 body{
-	background: #191919;
-  color: #eee;
-	font-family:"Exo 2", "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background: #0b0b1e;
+  color: #c2c2ff;
+	font-family:"Fredoka", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 }
 h1,h2,h3,h4,h5,h6 {
   padding: 0px;
-  font-weight: normal;
+  font-weight: 500;
 }
 a {
-  color: #6df;
+  color: #4747ff;
 }
 
 body.gaming {
@@ -29,8 +29,6 @@ html, body {
 canvas {
   display: block;
 }
-.game-area {
-}
 .game-area.showhwmousemedium {
   cursor: url("cursor.cur") 40 40, url("cursorsmall.cur") 30 30, crosshair !important;
 }
@@ -46,8 +44,8 @@ canvas {
 
 
 nav {
-  background: #b63258;
-  color: #fff;
+  background: #4747ff14;
+  color: #c2c2ff;
   display: flex;
   white-space: nowrap;
   padding-right: 1em;
@@ -106,7 +104,7 @@ nav .pseudo.button {
 }
 nav .pseudo.button.active, nav .pseudo.button:hover {
   box-shadow: none;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #c2c2ff;
 }
 
 nav form {
@@ -114,7 +112,7 @@ nav form {
 }
 /*fix placeholder color for chrome*/
 form input[type="text"]::-webkit-input-placeholder {
-  color: #c89eaa;
+  color: #c2c2ff;
 }
 form input[type="text"] {
   height: 36px;
@@ -133,15 +131,15 @@ form input {
 }
 
 .main-page {
-  margin-top: 50px;
+  margin-top: 64px;
 }
 .announcement {
   width: 100%;
-  border-radius: 4px;
-  background: #333;
-  padding-left: 6px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  border-radius: 16px;
+  background: #4747ff14;
+  padding-left: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .index-area table {
@@ -151,7 +149,7 @@ form input {
   font-size: 0.9em;
 }
 thead {
-  color: #fff;
+  color: #c2c2ff;
 }
 .index-area thead td {
   font-size: 1.1em;
@@ -173,13 +171,13 @@ thead {
 }
 .index-area td:nth-child(3) {
   text-align: center;
-  color: #fff;
+  color: #c2c2ff;
   width: 70px;
   max-width: 70px;
 }
 .index-area td:nth-child(4) {
   text-align: center;
-  color: #fff;
+  color: #c2c2ff;
   width: 100px;
   max-width: 100px;
 }
@@ -200,11 +198,11 @@ thead {
   padding-right: 0;
 }
 .index-area td span.SS {
-  color: #fff;
+  color: #c2c2ff;
   text-shadow: 0px 0px 2px #dd0;
 }
 .index-area td span.S {
-  color: #fff;
+  color: #c2c2ff;
   text-shadow: 0px 0px 2px #dd0;
 }
 .index-area td span.A {
@@ -223,7 +221,7 @@ thead {
   text-shadow: 0px 0px 2px #f00;
 }
 .index-area td span.F {
-  color: #999;
+  color: #c2c2ff;
 }
 
 .main-content{
@@ -254,7 +252,7 @@ thead {
 
 /*in-game pause menu*/
 .pause-menu {
-  color: #ffffff;
+  color: #c2c2ff;
   font-size: 1.8em;
   z-index: 10;
   position: fixed;
@@ -324,8 +322,8 @@ thead {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
+  background: #000000cc;
+  color: #c2c2ff;
   font-size: 1.2rem;
 }
 .grading > * {
@@ -335,34 +333,35 @@ thead {
   opacity: 0;
 }
 .grading .top {
-  background: rgba(0,0,0,0.7);
+  background: none;
   width: 100%;
   height: 115px;
 }
 .grading .ranking {
   position: absolute;
+  font-weight: 500;
   top: 35px;
-  right: 160px;
+  right: 180px;
   font-size: 3em;
 }
 .grading .beatmap-info {
-  color: #fff;
+  color: #c2c2ff;
   position: absolute;
   top: 0px;
   left: 120px;
 }
 .grading .beatmap-info .title {
-  font-style: italic;
+  font-weight: 500;
   font-size: 2em;
   line-height: 1.2em;
 }
 .grading .beatmap-info .artist {
-  font-style: italic;
+  font-weight: 400;
 }
 .grading .beatmap-info .version {
   font-size: 1.4em;
   line-height: 1.2em;
-  font-weight: bold;
+  font-weight: 500;
   display: inline-block;
 }
 .grading .beatmap-info .mapper {
@@ -375,7 +374,7 @@ thead {
   position: absolute;
   top: 210px;
   right: 180px;
-  font-style: italic;
+  font-weight: 500;
   font-size: 20em;
   line-height: 0.6em;
   letter-spacing: -0.08em;
@@ -401,7 +400,7 @@ thead {
 }
 .grading .grade.F {
   color: #000;
-  text-shadow: 0px 0px 40px #fff;
+  text-shadow: 0px 0px 40px #c2c2ff;
 }
 
 .grading .left {
@@ -420,24 +419,23 @@ thead {
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #c2c2ff;
+  font-weight: 500;
   font-size: 1.6em;
-  text-shadow: 1px 2px 0px rgba(0,0,0,0.3);
   line-height: 1em;
   padding-top: 1.4em;
   padding-right: 0.2em;
   text-align: right;
-  box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
 }
 .grading .block:before {
   position: absolute;
   top: 0px;
   left: 4px;
-  color: rgba(0,0,0,0.3);
+  color: #c2c2ff;
   text-shadow: none;
 }
 .block.score {
-  background: #6b00c6;
+  background: none;
   width: 500px;
   text-align: right;
   padding-top: 0em;
@@ -445,14 +443,14 @@ thead {
   padding-right: 20px;
   height: 100px;
   font-size: 3em;
-  text-shadow: 2px 3px 0px rgba(0,0,0,0.3);
+border-radius: 16px;
 }
 .block.score:before {
   content: "Score";
   position: absolute;
 }
 .block.acc {
-  background: #abbc38;
+  background: none;
   width: 50%;
   font-size: 1.8em;
   padding-top: 1.2em;
@@ -461,7 +459,7 @@ thead {
   content: "Accuracy";
 }
 .block.err {
-  background: #4299a4;
+  background: none;
   width: 50%;
   font-size: 1.8em;
   padding-top: 1.2em;
@@ -470,28 +468,28 @@ thead {
   content: "Hit Error";
 }
 .block.great {
-  background: #4293ff;
+  background: none;
   width: 25%;
 }
 .block.great:before {
   content: "Great";
 }
 .block.good {
-  background: #597a00;
+  background: none;
   width: 25%;
 }
 .block.good:before {
   content: "Good";
 }
 .block.meh {
-  background: #e68412;
+  background: none;
   width: 25%;
 }
 .block.meh:before {
   content: "Meh";
 }
 .block.miss {
-  background: #c40b15;
+  background: none;
   width: 25%;
 }
 .block.miss:before {
@@ -502,7 +500,7 @@ thead {
   box-shadow: none;
 }
 .block.combo {
-  background: #a64d99;
+  background: none;
   width: 50%;
   font-size: 2.2em;
   padding-top: 0.85em;
@@ -516,66 +514,60 @@ thead {
   position: absolute;
   top: -14px;
   right: 0;
-  background: rgba(0,0,0,0.6);
+  background: #0b0b1e;
   padding-left: 0.3em;
   padding-right: 0.3em;
-  border-radius: 0.3em 0.3em 0 0;
-  color: #8df;
+  border-radius: 16px;
+  color: #c2c2ff;
 }
 .grading .left .history-best:before {
   content: "History Best: ";
 }
-
-.grading .fullcombo {
-}
 .grading .fullcombo:before {
   position: absolute;
-  content: "Full Combo";
-  font-size: 2em;
-  font-style: italic;
-  color: #ff969c;
-  border: 5px #ff969c solid;
-  border-radius: 12px;
+  content: "Full Combo!";
+  font-size: 32px;
+  background-color: #c2c2ff;
+  color: #0b0b1e;
+  font-weight: 500;
+  border-radius: 16px;
   white-space:nowrap;
-  line-height: 1.2em;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-  padding-bottom: 0.1em;
-  transform: rotate(21deg);
-  bottom: 15px;
-  right: 90px;
-  text-shadow: 1px 2px 0px rgba(0,0,0,0.3);
-  box-shadow: 1px 2px 0px rgba(0,0,0,0.3);
+  line-height: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
+  bottom: 32px;
+  right: 260px;
 }
 
 .grading .btn {
   position: absolute;
-  bottom: 0px;
+  bottom: 32px;
+  margin-left: 128px;
+  margin-right: 128px;
   font-size: 1.8em;
-  width: 240px;
-  height: 2.5em;
+  width: 220px;
+  height: 80px;
   text-align: center;
-  font-weight: bold;
-  transition: 0.1s ease-out all;
+  font-weight: 500;
+  transition: 0.2s ease-in-out all;
   cursor: pointer;
-  transform: skewX(-12deg);
+  border-radius: 16px;
+  color: #c2c2ff;
+  background: #0b0b1e;
 }
 .grading .btn:hover {
-  letter-spacing: 0.06em;
-  width: 270px;
+  border-radius: 80px;
+  color: #0b0b1e;
+  background: #c2c2ff;
 }
 .grading .btn .inner {
   padding-top: 0.4em;
-  text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
-  transform: skewX(12deg);
 }
 .grading .btn.retry {
   right: -10px;
-  background: #eeaa00;
 }
 .grading .btn.quit {
   left: -10px;
-  background: #aa1b27;
 }
 
 
@@ -587,7 +579,7 @@ thead {
   display: inline-block;
   height: 2em;
   padding-right: 1em;
-  color: #fff;
+  color: #c2c2ff;
 }
 .sort-nav .selitem {
   display: inline-block;
@@ -595,7 +587,7 @@ thead {
   line-height: 2em;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  color: #7df;
+  color: #ffc2c2;
   cursor: pointer;
   transition: 0.2s ease all;
 }
@@ -603,7 +595,7 @@ thead {
   text-decoration: underline;
 }
 .sort-nav .selitem.active {
-  color: #fff;
+  color: #c2c2ff;
 }
 
 .side-panel {
@@ -639,7 +631,7 @@ thead {
 .side-panel .imgwrapper .overlaytext {
   position: absolute;
   font-style: italic;
-  color: #fff;
+  color: #c2c2ff;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -675,19 +667,18 @@ thead {
   font-size: 1.3em;
 }
 .disabled{
-  color: #555;
+  color: #4747ff14;
 }
 .panel{
-  background: #292929;
+  background: #4747ff14;
 	border-radius:5px;  
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.1); 
 	margin: 12px auto;
 	padding:15px;
 	width:370px;
 	height:100%;
 }
 h1,h2,h3 {
-  color: #fff;
+  color: #c2c2ff;
 }
 .progress {
 	line-height: 1.8em;
@@ -742,8 +733,8 @@ progress.finished::-webkit-progress-value{background:#6cf;}
 
 .dragbox {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.3); 
-  background: #555;
-  color: #eee;
+  background: #4747ff14;
+  color: #c2c2ff;
   font-size: 18px;
   height: 190px;
   width: 400px;
@@ -759,34 +750,30 @@ progress.finished::-webkit-progress-value{background:#6cf;}
 }
 
 .beatmapbox {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.3); 
-  background: #fff;
-  font-size: 18px;
+  background: #4747ff14;
+  font-size: 16px;
   height: 190px;
   width: 400px;
   margin-bottom: 12px;
   margin-right: 12px;
   position: relative;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 16px;
   /* shouldn't hide overflow because we have to show difficulty selection box */
   /* but we must ensure content don't get outside this box */
 }
-.beatmapbox:hover {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.7); 
-}
 .beatmapcover {
   object-fit: cover;
-  background: #555;
+  background: none;
   color: gray;
   width: 100%;
   height: 130px;
   position: absolute;
-  border-radius: 4px 4px 0 0;
+  border-radius: 16px 16px 0px 0px;
 }
 .beatmappreview {
   position: absolute;
-  fill: #fff;
+  fill: #c2c2ff;
   margin-left: 365px;
   margin-top: 10px;
   width: 24px;
@@ -795,7 +782,8 @@ progress.finished::-webkit-progress-value{background:#6cf;}
   content: "\F144"
 }
 .beatmapcover-overlay {
-  background-image: linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.7));
+  background-color: #000000cc;
+  border-radius: 14px 14px 0px 0px;
   width: 100%;
   height: 130px;
   position: absolute;
@@ -803,36 +791,37 @@ progress.finished::-webkit-progress-value{background:#6cf;}
 .beatmaptitle {
   width: 400px;
   padding-top: 73px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 1.3em;
-  font-style: italic;
-  color: #fff;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #c2c2ff;
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-shadow: 0 2px 4px rgba(0,0,0,.75);
+  text-shadow: 0 2px 4px #4747ff14;
 }
 .beatmapartist {
   width: 400px;
   padding-top: 102px;
-  padding-left: 10px;
+  padding-left: 8px;
   padding-right: 10px;
-  font-size: 0.8em;
-  font-style: italic;
-  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  color: #c2c2ff;
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-shadow: 0 2px 4px rgba(0,0,0,.75);
+  text-shadow: 0 2px 4px #4747ff14;
 }
 .beatmapcreator {
   padding-top: 134px;
-  padding-left: 10px;
-  color: #444;
-  font-size: 14px;
+  padding-left: 8px;
+  color: #c2c2ff;
+  font-size: 16px;
+  font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -841,23 +830,23 @@ progress.finished::-webkit-progress-value{background:#6cf;}
 }
 .beatmapapproved {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  background: rgba(0,0,0,0.4);
-  font-weight: bold;
-  font-size: 11px;
-  text-shadow: 0px 1px 2px rgba(0,0,0,0.7);
-  border-radius: 12px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  top: 8px;
+  left: 8px;
+  background: #0b0b1e;
+  font-weight: 500;
+  font-size: 12px;
+  text-shadow: 0px 1px 2px #4747ff14;
+  border-radius: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 2px;
 }
 .beatmapauthor {
   padding-top: 102px;
-  padding-left: 10px;
-  color: #444;
-  font-size: 14px;
+  padding-left: 8px;
+  color: #c2c2ff;
+  font-size: 16px;
   padding-top: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -866,53 +855,54 @@ progress.finished::-webkit-progress-value{background:#6cf;}
   position: absolute;
 }
 .beatmapbpm {
-  right: 13px;
+  right: 8px;
   position: absolute;
   float: right;
-  font-style: italic;
-  color: #fff;
-  font-size: 0.8em;
+  font-weight: 400;
+  color: #c2c2ff;
+  font-size: 16px;
   padding-top: 82px;
 }
 .beatmaplength {
-  right: 13px;
+  right: 8px;
   position: absolute;
   float: right;
-  font-style: italic;
-  color: #fff;
-  font-size: 0.8em;
+  font-weight: 400;
+  color: #c2c2ff;
+  font-size: 16px;
   padding-top: 102px;
 }
 
 .beatmap-difficulties {
   position: absolute;
   padding-top: 160px;
-  padding-left: 10px;
+  padding-left: 8px;
 }
 .beatmaplike {
   position: absolute;
-  bottom: 12px;
-  right: 10px;
-  font-size: 1.4em;
+  bottom: 8px;
+  right: 8px;
+  font-size: 24px;
 }
 .beatmaplike.icon-heart-empty {
-  color: #333;
+  color: #c2c2ff;
 }
 .beatmaplike.icon-heart {
-  color: #ed4956;
+  color: #4747ff;
 }
 .beatmaplike.hint-liked::after {
-  content: "已收藏";
+  content: "Favorited!";
   white-space: nowrap;
   position: absolute;
   bottom: 32px;
-  right: -8px;
-  color: white;
-  background: rgba(0,0,0,0.8);
+  right: -22px;
+  color: #0b0b1e;
+  background: #c2c2ff;
   font-size: 0.6em;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  border-radius: 0.3em;
+  font-weight: 500;
+  padding-left: 0.48em;
+  padding-right: 0.48em;
+  border-radius: 0.8em;
   opacity: 0;
   animation-name: fadeoutmy;
   animation-duration: 0.8s;
@@ -920,7 +910,7 @@ progress.finished::-webkit-progress-value{background:#6cf;}
 }
 @keyframes fadeoutmy {
   0%   { opacity: 1; }
-  70%   { opacity: 1; }
+  80%   { opacity: 1; }
   100% { opacity: 0; }
 }
 
@@ -944,11 +934,11 @@ progress.finished::-webkit-progress-value{background:#6cf;}
   content: " ";
   position: absolute;
   height: 80%;
-  width: 4px;
+  width: 8px;
   top: 10%;
-  left: -1px;
-  background: rgba(255,190,0,0.8);
-  border-radius: 4px;
+  left: -6px;
+  background: #4747ff;
+  border-radius: 16px;
 }
 .panel td{
   /*border-bottom:1px solid #f6f6f6;*/
@@ -960,13 +950,13 @@ progress.finished::-webkit-progress-value{background:#6cf;}
   width: 40px;
 }
 input {
-  background: #892e48;
-  color: #fff;
+  background: #0b0b1e;
+  color: #ebebff;
   border: none;
 }
 
 input:focus {
-  border-color: #fff;
+  border-color: #c2c2ff;
 }
 
 input:focus {outline:0;}
@@ -982,7 +972,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox] + span {
-  background: #555;
+  background: #4747ff14;
   border-radius: 10px;
   box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
   display: inline-block;
@@ -994,7 +984,7 @@ input[type=checkbox] + span {
 }
 
 input[type=checkbox] + span::before, input[type=checkbox] + span::after{
-  background:#eee;
+  background:#c2c2ff;
   content:'';
   display:block;
   position:absolute;
@@ -1011,7 +1001,7 @@ input[type=checkbox] + span::after{
 }
 
 input[type=checkbox]:checked + span {
-  background:#fc7bb4;         
+  background:#4747ff;         
 }
 
 input[type=checkbox]:checked + span::after{
@@ -1066,44 +1056,45 @@ input[type=checkbox]:checked + span::after{
 
 input[type=button] {
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 16px;
   position: relative;
   width: auto;
   transition: all .2s ease;
-  color: #eee;
+  color: #c2c2ff;
   font-size: 16px;
-  line-height: 17px;
+  font-weight: 400;
+  line-height: 24px;
   padding-top: 0px;
   height: 24px;
   margin-left: 5px;
   /*padding-left: 12px;*/
   /*padding-right: 12px;*/
   min-width: 70px;
-  background: #555;
+  background: #4747ff14;
   border: none;
 }
 input[type=button]:hover {
-  background: #999;
-  color: #fff;
+  background: #c2c2ff;
+  color: #0b0b1e;
 }
 input[type=button].using {
-  background: #fc7bb4;
-  color: #fff;
+  background: #4747ff;
+  color: #c2c2ff;
 }
 input[type=button].warnbtn {
-  background: #191919;
-  border-radius: 4px;
+  background: #4747ff14;
+  border-radius: 16px;
   cursor: pointer;
   display: inline-block;
-  color: #eee;
+  color: #c2c2ff;
   font-size:16px;
   text-align: center;
-  padding: 12px 20px 14px;
+  padding: 8px 16px 8px;
   height: auto;
 }
 input[type=button].warnbtn:hover {
-  background: #a11;
-  color: #fff;
+  background: #ff4747;
+  color: #ffc2c2;
 }
 input[type=range] {
   cursor: pointer;
@@ -1120,7 +1111,7 @@ input[type=range]::-moz-range-thumb {
   width: 10px;
 }
 input[type=range]::-moz-range-progress {
-  background-color: #fc7bb4; 
+  background-color: #4747ff; 
 }
 input[type=range]::-moz-range-track {  
   background-color: #888;
@@ -1128,9 +1119,10 @@ input[type=range]::-moz-range-track {
 
 hr {
   height: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+ border-radius:16px;
   border: none;
-  background: #ee6da7;
+  background: #c2c2ff;
 }
 
 
@@ -1160,13 +1152,12 @@ div[hidden=""] {
 }
 
 .difficulty-item {
-  background: #142b33;
-  box-shadow: 2px 2px 5px #000;
-  border-radius: 8px;
+  background: #0b0b1e;
+ border-radius:16px;
   margin-bottom: 6px;
   padding: 12px;
   height: 50px;
-  color: #fff;
+  color: #c2c2ff;
   white-space: nowrap;
   font-size: 16px;
   cursor: pointer;
@@ -1191,7 +1182,8 @@ body:not(.sound-ready) .difficulty-item {
   position: relative;
 }
 .difficulty-item:hover {
-  background: #1e404d; 
+  background: #c2c2ff; 
+  color: #0b0b1e;
 }
 .difficulty-item .versionline {
   position: absolute;
@@ -1199,12 +1191,12 @@ body:not(.sound-ready) .difficulty-item {
   left: 50px;
 }
 .difficulty-item .version {
-  font-size: 1.1em;
+  font-size: 16px;
   display: inline-block;
 }
 .difficulty-item .mapper {
   padding-left: 0.5em;
-  font-size: 0.8em;
+  font-size: 12px;
   display: inline-block;
 }
 .star-row {
@@ -1267,7 +1259,7 @@ body:not(.sound-ready) .difficulty-item {
   top: 5px;
   left: 5px;
   border-radius: 50%;
-  background: #fff;
+  background: #c2c2ff;
 }
 .bigring {
   position: absolute;
@@ -1277,7 +1269,7 @@ body:not(.sound-ready) .difficulty-item {
   left: 8px;
   border-radius: 50%;
   border: solid #aaa 4px;
-  background: #fff;
+  background: #c2c2ff;
 }
 .bigring.easy {
   border-color: #88b300;
@@ -1325,8 +1317,8 @@ body:not(.sound-ready) .difficulty-item {
   margin-top: 0.1em;
   margin-left: 0.2em;
   border-radius: 50%;
-  border: 2px solid #fff;
-  border-color: #fff #fff #fff transparent;
+  border: 2px solid #c2c2ff;
+  border-color: #c2c2ff #c2c2ff #c2c2ff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

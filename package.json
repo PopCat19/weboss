@@ -1,0 +1,13 @@
+{
+  "name": "weboss",
+  "version": "1.0.0",
+  "description": "A browser rhythm game where players click circles following rhythm of the music.",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "PopCat19 <atsuo11111@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/PopCat19/weboss.git"
+}

@@ -304,15 +304,11 @@ var NSaddBeatmapList = {
 
     // Async request for more information
     requestMoreInfo: function(box) {
-        const url = "https://api.sayobot.cn/beatmapinfo?1=" + box.sid;
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = 'text';
-        xhr.open("GET", url);
-        xhr.onload = function() {
-            const res = JSON.parse(xhr.response);
-            NSaddBeatmapList.addMoreInfo(box, res.data);
-        };
-        xhr.send();
+        const url = `https://api.sayobot.cn/beatmapinfo?1=${box.sid}`;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => NSaddBeatmapList.addMoreInfo(box, data.data))
+        .catch(error => console.error('Error fetching more info:', error));
     }
 };
 

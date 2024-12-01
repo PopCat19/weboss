@@ -1,128 +1,124 @@
 <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>circles</title>
-        <link rel="stylesheet" href="style/picnic.min.css">
-        <link rel="stylesheet" type="text/css" href="style/main.css">
-        <link rel="stylesheet" type="text/css" href="style/font.css">
-        <link rel="icon" href="favicon.png">
-        <script src="scripts/launchgame.js"></script>
-        <script src="scripts/downloader.js"></script>
-        <script src="scripts/addbeatmaplist.js"></script>
-        <script src="scripts/settings.js"></script>
-        <script src="scripts/jsloader.js"></script>
-    </head>
-
-    <body>
-        <div class="game-area" id="game-area" hidden>
-        </div>
-
-        <div class="pause-menu" id="pause-menu" hidden>
-            <div class="paused-title">paused</div>
-            <div class="button-list">
-                <div class="pausebutton continue" id="pausebtn-continue">
-                    <div class="inner">Continue</div>
-                </div>
-                <div class="pausebutton retry" id="pausebtn-retry">
-                    <div class="inner">Retry</div>
-                </div>
-                <div class="pausebutton quit" id="pausebtn-quit">
-                    <div class="inner">Quit</div>
-                </div>
+<html lang="en">
+<head>
+    <title>Search</title>
+    <link rel=”canonical” href=”https://webosu.online/”/>
+    <meta name="description" content="Search through over 1,000,000 beatmaps hosted by Mino to find your new favorite!">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/picnic.min.css">
+    <link rel="stylesheet"href="css/main.css">
+    <link rel="stylesheet"href="css/font.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <script src="js/launchgame.js"></script>
+    <script src="js/downloader.js"></script>
+    <script src="js/addbeatmaplist.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/jsloader.js"></script>
+    <script src="js\lib\localforage.min.js"></script>
+</head>
+<body>
+    <div class="game-area" id="game-area" hidden>
+    </div>
+    <div class="pause-menu" id="pause-menu" hidden>
+        <div class="paused-title">Paused</div>
+        <div class="button-list">
+            <div class="pausebutton continue" id="pausebtn-continue">
+                <div class="inner">Continue</div>
+            </div>
+            <div class="pausebutton retry" id="pausebtn-retry">
+                <div class="inner">Retry</div>
+            </div>
+            <div class="pausebutton quit" id="pausebtn-quit">
+                <div class="inner">Quit</div>
             </div>
         </div>
-
-        <nav id="main-nav">
-            <div class="nav-link">
-                <a href="index.html" class="brand">OSS!</a>
-                <a href="new.html" class="pseudo button">New</a>
-                <a href="hot.html" class="pseudo button">Popular</a>
-                <a href="genre.html" class="pseudo button">Genres</a>
+    </div>
+    <!--Nav Bar-->
+    <nav id="main-nav">
+        <div class="nav-link">
+            <a href="index.html" class="brand">webosu!</a>
+            <a href="new.html" class="pseudo button">New</a>
+            <a href="hot.html" class="pseudo button">Popular</a>
+            <a href="browse.html" class="pseudo button">Browse</a>
+        </div>
+        <div class="nav-search">
+            <form action="search.html">
+                <container id="searchbar" class="searchbar">
+                    <input type="text" name="q" placeholder="Seach for beatmap or enter a Set ID" />
+                </container>
+            </form>
+        </div>
+        <div class="nav-tool">
+            <a href="liked.html" class="pseudo button">Favorites</a>
+            <a href="settings.html" class="pseudo button">Settings</a>
+            <input type="username" id="userreg" placeholder="Type name" />
+        </div>
+    </nav>
+    <div class="main-page" id="main-page">
+        <div class="main-content">
+            <br>
+            <div class="beatmap-list" id="beatmap-list">
+                <!-- to be filled in script -->
             </div>
-            <div class="nav-search">
-                <form action="search.html">
-                    <input type="text" name="q" placeholder="Search Maps or SID"/>
-                    <input type="image" class="search-button" src="research.svg">
-                </form>
+            <div class="button" style="width:100%; margin-bottom: 10px;" id="btnmore">Load More</div>
+        </div>
+        <!-- <div class="side-panel"> to be activated in script </div> -->
+        <div class="statuslines" id="statuslines">
+            <div class="progress" id="script-progress">
+                Scripts
+                <div class="lds-dual-ring"></div>
             </div>
-            <div class="nav-tool">
-                <a href="local.html" class="pseudo button">Favorites</a>
-                <a href="faq.html" class="pseudo button">FAQ</a>
-                <a href="settings.html" class="pseudo button">Settings</a>
-                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">Fullscreen</a>
+            <div class="progress" id="skin-progress">
+                Skin
+                <div class="lds-dual-ring"></div>
             </div>
-        </nav>
-
-        <div class="main-page" id="main-page">
-            <div class="main-content">
-                <div class="beatmap-list" id="beatmap-list">
-                    <!-- to be filled in script -->
-                </div>
-                <div class="button" style="width:100%; margin-bottom: 10px;" id="btnmore">View More</div>
-                <div class="text">Use the latest Firefox and Chromium-based browsers for a better experience!</div>
-                <div class="text">Current Version: test-ver. <a href="https://github.com/PopCat19/weboss">Github</a></div>
-                <div class="text">API powered by <a href="https://osu.direct/home/">osu.direct</a></div>
-            </div>
-            <!-- <div class="side-panel">
-                to be activated in script
-            </div> -->
-            <div class="statuslines" id="statuslines">
-                <div class="progress" id="script-progress">
-                    Scripts
-                    <div class="lds-dual-ring"></div>
-                </div>
-                <div class="progress" id="skin-progress">
-                    Skin
-                    <div class="lds-dual-ring"></div>
-                </div>
-                <div class="progress" id="sound-progress">
-                    Hitsounds
-                    <div class="lds-dual-ring"></div>
-                </div>
+            <div class="progress" id="sound-progress">
+                Hitsounds
+                <div class="lds-dual-ring"></div>
             </div>
         </div>
-        <script>
-let url = new URL(window.location.href);
-            let keyword = url.searchParams.get("q");
-            
-            // Comprehensive null/undefined/empty string check
-            if (keyword && keyword.trim() !== '') {
-                // remove quotes, trailing spaces and duplicate spaces
-                keyword = keyword.split('"').join(' ').trim().replace(/ +/g, ' ');
-                
-                // Check if element exists before setting value
-                let inputElement = document.getElementById("inputtext");
-                if (inputElement) {
-                    inputElement.value = keyword;
-                }
-            
-                var cur = 0;
-                if (keyword == parseInt(keyword, 10)) {
-                    // is sid
-                    addBeatmapSid(keyword);
-                }
-                else {
-                    // search keyword
-                    addBeatmapList("https://api.sayobot.cn/beatmaplist?0=20&1=0&2=4&3=" + encodeURIComponent(keyword) + "&5=1");
-                    cur = 20;
-                }
+    </div>
+    <script>
+    //Make enter work
+    const input = document.getElementById("userreg");
+    const username = window.localStorage.getItem("username")
+    if(username) input.value = username;
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            saveUser();
+        }
+    });
+    //Store username in localstorage
+    function saveUser( name ) {
+        const player = document.getElementById('userreg').value;
+        window.localStorage.setItem("username", player);
+        document.cookie = 'username=' + player;
+      }
+        let url = new URL(window.location.href);
+        let keyword = url.searchParams.get("q");
+        var cur = 0;
+        if (keyword == parseInt(keyword, 10)) {
+            // Checks for SID
+            addBeatmapSid(keyword);
+        } else {
+            // Insert keyword
+            addBeatmapList(`https://catboy.best/api/v2/search?query=${keyword}&status=1&status=2&status=3&status=4&sort=id:asc`);
+        }
+        document.getElementById("btnmore").onclick = function () {
+          let p = 0;
+            if (typeof (window.list_endid) == "undefined") {
+                addBeatmapList(`https://catboy.best/api/v2/search?q=${keyword}&p=${p}&status=1&status=2&status=3&status=4&sort=id:asc`);
             } else {
-                console.log("No valid search query found");
+                if (window.list_endid == 0)
+                    document.getElementById("btnmore").innerText = "There's no more beatmaps ;-;";
+                else
+                addBeatmapList(`https://catboy.best/api/v2/search?q=${keyword}&p=${p}&status=1&status=2&status=3&status=4&sort=id:asc`);
             }
-        </script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169262247-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-169262247-1');
-</script>
-    </body>
+            p++
+        }
+    </script>
+</body>
 </html>
-
-<!-- attribution -->
-<!-- play icon made by https://www.flaticon.com/authors/those-icons -->
-<!-- search icon made by https://www.flaticon.com/authors/good-ware -->

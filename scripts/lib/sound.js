@@ -1,8 +1,6 @@
-
 /*
 Sound.js
 ===============
-
 A complete micro library of useful, modular functions that help you load, play, control
 and generate sound effects and music for games and interactive applications. All the
 code targets the WebAudio API.
@@ -12,16 +10,12 @@ code targets the WebAudio API.
 /*
 Fixing the WebAudio API
 --------------------------
-
 The WebAudio API is so new that it's API is not consistently implemented properly across
 all modern browsers. Thankfully, Chris Wilson's Audio Context Monkey Patch script
 normalizes the API for maximum compatibility.
-
 https://github.com/cwilso/AudioContext-MonkeyPatch/blob/gh-pages/AudioContextMonkeyPatch.js
-
 It's included here.
 Thank you, Chris!
-
 */
 
 (function (global, exports, perf) {
@@ -162,7 +156,6 @@ Thank you, Chris!
 /*
 Define the audio context
 ------------------------
-
 All this code uses a single `AudioContext` If you want to use any of these functions
 independently of this file, make sure that have an `AudioContext` called `actx`.
 */
@@ -172,29 +165,23 @@ var actx = new AudioContext();
 /*
 sounds
 ------
-
 `sounds` is an object that you can use to store all your loaded sound fles.
 It also has a helpful `load` method that manages asset loading. You can load sounds at
 any time during the game by using the `sounds.load` method. You don't have to use
 the `sounds` object or its `load` method, but it's a really convenient way to
 work with sound file assets.
-
 Here's how could use the `sound` object to load three sound files from a `sounds` folder and
 call a `setup` method when all the files have finished loading:
-
     sounds.load([
       "sounds/shoot.wav",
       "sounds/music.wav",
       "sounds/bounce.mp3"
     ]);
     sounds.whenLoaded = setup;
-
 You can now access these loaded sounds in your application code like this:
-
 var shoot = sounds["sounds/shoot.wav"],
     music = sounds["sounds/music.wav"],
     bounce = sounds["sounds/bounce.mp3"];
-
 */
 
 var sounds = {
@@ -291,23 +278,17 @@ var sounds = {
 /*
 makeSound
 ---------
-
 `makeSound` is the function you want to use to load and play sound files.
 It creates and returns and WebAudio sound object with lots of useful methods you can
 use to control the sound.
 You can use it to load a sound like this:
-
     var anySound = makeSound("sounds/anySound.mp3", loadHandler);
-
-
 The code above will load the sound and then call the `loadHandler`
 when the sound has finished loading.
 (However, it's more convenient to load the sound file using
 the `sounds.load` method described above, so I don't recommend loading sounds
 like this unless you need more low-level control.)
-
 After the sound has been loaded you can access and use it like this:
-
     function loadHandler() {
       anySound.loop = true;
       anySound.pan = 0.8;
@@ -320,37 +301,28 @@ After the sound has been loaded you can access and use it like this:
       anySound.setEcho(0.2, 0.2, 0);
       anySound.playbackRate = 0.5;
     }
-
 For advanced configurations, you can optionally supply `makeSound` with optional 3rd and
 4th arguments:
-
    var anySound = makeSound(source, loadHandler, loadTheSound?, xhrObject);
-
 `loadTheSound?` is a Boolean (true/false) value that, if `false` prevents the sound file
 from being loaded. You would only want to set it to `false` like this if you were
 using another file loading library to load the sound, and didn't want it to be loaded
 twice.
-
 `xhrObject`, the optional 4th argument, is the XHR object that was used to load the sound. Again, you
 would only supply this if you were using another file loading library to load the sound,
 and that library had generated its own XHR object. If you supply the `xhr` argument, `makeSound`
 will skip the file loading step (because you've already done that), but still decode the audio buffer for you.
 (If you are loading the sound file using another file loading library, make sure that your sound
 files are loaded with the XHR `responseType = "arraybuffer"` option.)
-
 For example, here's how you could use this advanced configuration to decode a sound that you've already loaded
 using your own custom loading system:
-
    var soundSprite = makeSound(source, decodeHandler.bind(this), false, xhr);
-
 When the file has finished being decoded, your custom `decodeHandler` will run, which tells you
 that the file has finished decoding.
-
 If you're creating more than one sound like this, use counter variables to track the number of sounds
 you need to decode, and the number of sounds that have been decoded. When both sets of counters are the
 same, you'll know that all your sound files have finished decoding and you can proceed with the rest
 of you application. (The [Hexi game engine](https://github.com/kittykatattack/hexi) uses `makeSound` in this way.)
-
 */
 
 function makeSound(source, loadHandler, shouldLoadSound, xhr, failHandler) {
@@ -660,4 +632,3 @@ function decodeAudio(o, xhr, loadHandler, failHandler) {
   );
 }
 // exports.decodeAudio = decodeAudio;
-

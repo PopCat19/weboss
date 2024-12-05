@@ -60,56 +60,72 @@
         </div>
     </nav>
     <!-- Main Page -->
-    <main class="main-page flex flex-col w-full" id="main-page">
-        <div class="main-content w-full mt-2">
-            <div class="site-notice-container px-3">
-                <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 py-4 px-4 my-3 font-medium rounded-16 text-16">
-                    Note: This site is still in-development... Expect bugs --
-                    Forked from
-                    <a href="https://github.com/111116/webosu" class="text-primaryCrimson-80 hover:text-primaryCrimson-100 underline">
-                        github.com/111116/webosu
-                    </a>
-                    with scripts from
-                    <a href="https://github.com/BlaNKtext/webosu" class="text-primaryCrimson-80 hover:text-primaryCrimson-100 underline">
-                        github.com/BlaNKtext/webosu
-                    </a>
-                </div>
-            </div>
-            <div class="flex w-full px-4">
-                <div class="h-2 w-full rounded-16 bg-secondaryCrimson-12"></div>
+    <main class="main-page flex flex-col w-full my-4 px-4" id="main-page">
+        <div class="site-notice-container">
+            <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 p-4 font-medium rounded-16 text-16">
+                Note: This site is still in-development... Expect bugs --
+                Forked from
+                <a href="https://github.com/111116/webosu" class="text-primaryCrimson-80 hover:text-primaryCrimson-100 underline">
+                    github.com/111116/webosu
+                </a>
+                with scripts from
+                <a href="https://github.com/BlaNKtext/webosu" class="text-primaryCrimson-80 hover:text-primaryCrimson-100 underline">
+                    github.com/BlaNKtext/webosu
+                </a>
             </div>
         </div>
+        <!-- <div class="flex w-full my-8 px-2">
+            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12"></div>
+        </div> -->
     </main>
     <!-- Index Areas -->
-    <div class="index-area">
-        <h2>Popular beatmaps</h2>
-        <a href="hot.html" class="more">See more Popular Beatmaps</a>
-        <hr />
-        <div class="beatmap-list" id="beatmap-list-hot"></div>
-    </div>
-    <div class="index-area">
-        <h2>Previously Played</h2>
-        <a href="history.html" class="more">See your play history</a>
-        <hr />
-        <div class="beatmap-list" id="beatmap-list-history"></div>
-    </div>
-    <div class="index-area">
-        <h2>Favorited Beatmaps</h2>
-        <a href="liked.html" class="more">See all favorited Beatmaps</a>
-        <hr />
-        <div class="beatmap-list" id="beatmap-list-liked"></div>
-    </div>
-    <div class="index-area">
-        <h2>Latest Beatmaps</h2>
-        <a href="new.html" class="more">See all latest Beatmaps</a>
-        <hr />
-        <div class="beatmap-list" id="beatmap-list-new"></div>
-    </div>
-    <div class="index-area">
-        <a onclick="genRandomList()" class="more" style="cursor:pointer;">Randomize</a>
-        <h2>Random Beatmaps</h2>
-        <hr />
-        <div class="beatmap-list" id="beatmap-list-random"></div>
+    <div class="space-y-16 mx-4">
+        <div class="index-area bg-baseCrimson-100 rounded-16">
+            <div class="flex justify-between items-end">
+                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Popular beatmaps</h2>
+                <a href="hot.html" class="text-accentCrimson-100 hover:underline text-16">See more Popular Beatmaps</a>
+            </div>
+            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="beatmap-list" id="beatmap-list-hot"></div>
+        </div>
+
+        <div class="index-area bg-baseCrimson-100 rounded-16">
+            <div class="flex justify-between items-end">
+                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Previously Played</h2>
+                <a href="history.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16">See your play history</a>
+            </div>
+            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="beatmap-list" id="beatmap-list-history"></div>
+        </div>
+
+        <div class="index-area bg-baseCrimson-100 rounded-16">
+            <div class="flex justify-between items-end">
+                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Favorited Beatmaps</h2>
+                <a href="liked.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16">See all favorited Beatmaps</a>
+            </div>
+            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="beatmap-list" id="beatmap-list-liked"></div>
+        </div>
+
+        <div class="index-area bg-baseCrimson-100 rounded-16">
+            <div class="flex justify-between items-end">
+                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Latest Beatmaps</h2>
+                <a href="new.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16">See all latest Beatmaps</a>
+            </div>
+            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="beatmap-list" id="beatmap-list-new"></div>
+        </div>
+
+        <div class="index-area bg-baseCrimson-100 rounded-16">
+            <div class="flex justify-between items-end">
+                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Random Beatmaps</h2>
+                <a onclick="genRandomList()" class="text-accentCrimson-100 hover:underline align-text-bottom cursor-pointer text-16">
+                    Randomize
+                </a>
+            </div>
+            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="beatmap-list" id="beatmap-list-random"></div>
+        </div>
     </div>
     <!-- Loader Progress -->
     <div class="statuslines" id="statuslines">

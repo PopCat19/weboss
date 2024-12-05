@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-black-100">
+<html lang="en" class="bg-baseCrimson-100">
 
 <head>
     <meta charset="UTF-8">
@@ -33,34 +33,39 @@
         </div>
     </div>
     <!-- Nav Bar -->
-    <nav id="main-nav" class="bg-secondaryCrimson-12 w-full flex items-center justify-between px-4 py-2">
-        <!-- Left Group: Logo, Navigation Links -->
-        <div class="flex items-center space-x-4">
-            <a href="index.html" class="text-24 font-bold text-primaryCrimson-100 mr-2">weboss!</a>
-            <a href="new.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">New</a>
-            <a href="hot.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Popular</a>
-            <a href="browse.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Browse</a>
-        </div>
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-lg rounded-16 mx-4 mt-4">
+        <div class="bg-secondaryCrimson-12 rounded-16 shadow-lg">
+            <div class="flex items-center justify-between px-4 py-2">
+                <!-- Left Group: Logo, Navigation Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-24 font-bold text-primaryCrimson-100 mr-2">weboss!</a>
+                    <a href="new.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">New</a>
+                    <a href="hot.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Popular</a>
+                    <a href="browse.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Browse</a>
+                </div>
 
-        <!-- Center Group: Search Box -->
-        <div class="flex items-center">
-            <form action="search.html" class="flex items-center bg-secondaryCrimson-12">
-                <input type="text" name="q" placeholder="Search" class="w-48 h-10 px-3 text-14 text-secondaryCrimson-32 rounded-l-16 border" />
-                <button type="submit" class="h-10 bg-baseCrimson-64 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold px-3 rounded-r-16 border border-secondaryCrimson-24 border-l-0 flex items-center justify-center">
-                    <img src="/img/search.svg" alt="Search" class="w-5 h-5 text-secondaryCrimson-100" />
-                </button>
-            </form>
-        </div>
+                <!-- Center Group: Search Box -->
+                <div class="flex items-center">
+                    <form action="search.html" class="flex items-center bg-secondaryCrimson-12">
+                        <input type="text" name="q" placeholder="Search" class="w-48 h-10 px-3 text-14 text-secondaryCrimson-32 rounded-l-16 border" />
+                        <button type="submit" class="h-10 bg-baseCrimson-64 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold px-3 rounded-r-16 border border-secondaryCrimson-24 border-l-0 flex items-center justify-center">
+                            <img src="/img/search.svg" alt="Search" class="w-5 h-5 text-secondaryCrimson-100" />
+                        </button>
+                    </form>
+                </div>
 
-        <!-- Right Group: Action Links -->
-        <div class="flex items-center space-x-4">
-            <a href="liked.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Favorites</a>
-            <a href="faq.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">FAQ</a>
-            <a href="settings.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Settings</a>
+                <!-- Right Group: Action Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="liked.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Favorites</a>
+                    <a href="faq.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">FAQ</a>
+                    <a href="settings.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Settings</a>
+                </div>
+            </div>
         </div>
     </nav>
+
     <!-- Main Page -->
-    <main class="main-page flex flex-col w-full my-4 px-4" id="main-page">
+    <main class="main-page flex flex-col w-full mt-24 px-4" id="main-page">
         <div class="site-notice-container">
             <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 p-4 font-medium rounded-16 text-16">
                 Note: This site is still in-development... Expect bugs --
@@ -75,8 +80,8 @@
             </div>
         </div>
         <!-- <div class="flex w-full my-8 px-2">
-            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12"></div>
-        </div> -->
+        <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12"></div>
+    </div> -->
     </main>
     <!-- Index Areas -->
     <div class="space-y-16 mx-4">
@@ -128,28 +133,33 @@
         </div>
     </div>
     <!-- Loader Progress -->
-    <div class="statuslines" id="statuslines">
-        <div class="progress" id="script-progress">
-            Scripts
+    <div class="flex flex-col space-y-4 p-4 bg-gray-100" id="statuslines">
+        <div class="flex items-center space-x-2 text-gray-700" id="script-progress">
+            <span class="font-medium">Scripts</span>
             <div class="lds-dual-ring"></div>
         </div>
-        <div class="progress" id="skin-progress">
-            Skin
+        <div class="flex items-center space-x-2 text-gray-700" id="skin-progress">
+            <span class="font-medium">Skin</span>
             <div class="lds-dual-ring"></div>
         </div>
-        <div class="progress" id="sound-progress">
-            Hitsounds
+        <div class="flex items-center space-x-2 text-gray-700" id="sound-progress">
+            <span class="font-medium">Hitsounds</span>
             <div class="lds-dual-ring"></div>
         </div>
     </div>
-    </div>
+
     <!-- Footer -->
-    <div class="footer">
-        <div class="footer-infos">
-            <span class="footer-info">Beatmap Mirror <a href="https://catboy.best/">Mino</a></span>
-            <span class="footer-info">Source code: <a href="https://github.com/PopCat19/weboss">Github</a></span>
+    <div class="bg-gray-200 p-4">
+        <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-center">
+            <span class="text-gray-600">
+                Beatmap Mirror
+                <a href="https://catboy.best/" class="text-blue-600 hover:underline">Mino</a>
+            </span>
+            <span class="text-gray-600">
+                Source code:
+                <a href="https://github.com/PopCat19/weboss" class="text-blue-600 hover:underline">Github</a>
+            </span>
         </div>
-    </div>
     </div>
     <script src="js/launchgame.js"></script>
     <script src="js/downloader.js"></script>

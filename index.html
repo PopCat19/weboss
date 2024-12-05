@@ -15,7 +15,7 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="bg-baseCrimson-100">
+<body class="">
     <!-- Game Area -->
     <div class="game-area" id="game-area" hidden></div>
     <div class="pause-menu" id="pause-menu" hidden>
@@ -33,21 +33,21 @@
         </div>
     </div>
     <!-- Nav Bar -->
-    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-lg rounded-16 mx-4 mt-4">
-        <div class="bg-secondaryCrimson-12 rounded-16 shadow-lg">
-            <div class="flex items-center justify-between px-4 py-2">
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-lg rounded-16px">
+        <div class="bg-secondaryCrimson-12 rounded-16px shadow-lg">
+            <div class="flex items-center justify-between px-16px py-8px">
                 <!-- Left Group: Logo, Navigation Links -->
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-24 font-bold text-primaryCrimson-100 mr-2">weboss!</a>
-                    <a href="new.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">New</a>
-                    <a href="hot.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Popular</a>
-                    <a href="browse.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Browse</a>
+                    <a href="index.html" class="text-24px font-bold text-primaryCrimson-100 mr-2">weboss!</a>
+                    <a href="new.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-16px">New</a>
+                    <a href="hot.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-16px">Popular</a>
+                    <a href="browse.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-16px">Browse</a>
                 </div>
 
                 <!-- Center Group: Search Box -->
                 <div class="flex items-center">
                     <form action="search.html" class="flex items-center">
-                        <input type="text" name="q" placeholder="Search or enter ID" class="w-48 h-10 px-3 text-8 border-none bg-baseCrimson-100 text-primaryCrimson-100 font-medium placeholder-secondaryCrimson-32 rounded-l-16 focus:outline-none focus:ring-0" />
+                        <input type="text" name="q" placeholder="Search or enter ID" class="w-48 h-10 px-3 text-8px border-none bg-baseCrimson-100 text-primaryCrimson-100 font-medium placeholder-secondaryCrimson-32 rounded-l-16 focus:outline-none focus:ring-0" />
                         <button type="submit" class="h-10 border-none bg-secondaryCrimson-12 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold px-3 rounded-r-16 flex items-center justify-center">
                             <img src="/img/search.svg" alt="Search" class="w-5 h-5 text-secondaryCrimson-100" />
                         </button>
@@ -56,18 +56,18 @@
 
                 <!-- Right Group: Action Links -->
                 <div class="flex items-center space-x-4">
-                    <a href="liked.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Favorites</a>
-                    <a href="faq.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">FAQ</a>
-                    <a href="settings.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-2 px-4 rounded-16">Settings</a>
+                    <a href="liked.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-16px">Favorites</a>
+                    <a href="faq.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-16px">FAQ</a>
+                    <a href="settings.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-16px">Settings</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Main Page -->
-    <main class="main-page flex flex-col w-full mt-24 px-4" id="main-page">
+    <main class="main-page flex flex-col w-full mt-24 px-16px" id="main-page">
         <div class="site-notice-container">
-            <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 p-4 font-medium rounded-16 text-16">
+            <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 p-16px font-medium rounded-16px text-16px">
                 Note: This site is still in-development... Expect bugs --
                 Forked from
                 <a href="https://github.com/111116/webosu" class="text-baseCrimson-100 hover:text-white-100 underline">
@@ -79,62 +79,59 @@
                 </a>
             </div>
         </div>
-        <!-- <div class="flex w-full my-8 px-2">
-        <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12"></div>
-    </div> -->
     </main>
     <!-- Index Areas -->
-    <div class="space-y-16 mx-4">
-        <div class="index-area bg-baseCrimson-100 rounded-16">
+    <div class="space-y-16 mx-16px">
+        <div class="index-are rounded-16px">
             <div class="flex justify-between items-end">
-                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Popular beatmaps</h2>
-                <a href="hot.html" class="text-accentCrimson-100 hover:underline text-16">See more Popular Beatmaps</a>
+                <h2 class="text-24px font-semiBold text-primaryCrimson-100">Popular beatmaps</h2>
+                <a href="hot.html" class="text-accentCrimson-100 hover:underline text-16px">See more Popular Beatmaps</a>
             </div>
-            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="h-1 w-full rounded-16px bg-secondaryCrimson-12 mt-2 mb-4"></div>
             <div class="beatmap-list" id="beatmap-list-hot"></div>
         </div>
 
-        <div class="index-area bg-baseCrimson-100 rounded-16">
+        <div class="index-area rounded-16px">
             <div class="flex justify-between items-end">
-                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Previously Played</h2>
-                <a href="history.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16">See your play history</a>
+                <h2 class="text-24px font-semiBold text-primaryCrimson-100">Previously Played</h2>
+                <a href="history.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16px">See your play history</a>
             </div>
-            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="h-1 w-full rounded-16px bg-secondaryCrimson-12 mt-2 mb-4"></div>
             <div class="beatmap-list" id="beatmap-list-history"></div>
         </div>
 
-        <div class="index-area bg-baseCrimson-100 rounded-16">
+        <div class="index-area rounded-16px">
             <div class="flex justify-between items-end">
-                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Favorited Beatmaps</h2>
-                <a href="liked.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16">See all favorited Beatmaps</a>
+                <h2 class="text-24px font-semiBold text-primaryCrimson-100">Favorited Beatmaps</h2>
+                <a href="liked.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16px">See all favorited Beatmaps</a>
             </div>
-            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="h-1 w-full rounded-16px bg-secondaryCrimson-12 mt-2 mb-4"></div>
             <div class="beatmap-list" id="beatmap-list-liked"></div>
         </div>
 
-        <div class="index-area bg-baseCrimson-100 rounded-16">
+        <div class="index-area rounded-16px">
             <div class="flex justify-between items-end">
-                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Latest Beatmaps</h2>
-                <a href="new.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16">See all latest Beatmaps</a>
+                <h2 class="text-24px font-semiBold text-primaryCrimson-100">Latest Beatmaps</h2>
+                <a href="new.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16px">See all latest Beatmaps</a>
             </div>
-            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="h-1 w-full rounded-16px bg-secondaryCrimson-12 mt-2 mb-4"></div>
             <div class="beatmap-list" id="beatmap-list-new"></div>
         </div>
 
-        <div class="index-area bg-baseCrimson-100 rounded-16">
+        <div class="index-area rounded-16px">
             <div class="flex justify-between items-end">
-                <h2 class="text-24 font-semiBold text-primaryCrimson-100">Random Beatmaps</h2>
-                <a onclick="genRandomList()" class="text-accentCrimson-100 hover:underline align-text-bottom cursor-pointer text-16">
+                <h2 class="text-24px font-semiBold text-primaryCrimson-100">Random Beatmaps</h2>
+                <a onclick="genRandomList()" class="text-accentCrimson-100 hover:underline align-text-bottom cursor-pointer text-16px">
                     Randomize
                 </a>
             </div>
-            <div class="h-1 w-full rounded-16 bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="h-1 w-full rounded-16px bg-secondaryCrimson-12 mt-2 mb-4"></div>
             <div class="beatmap-list" id="beatmap-list-random"></div>
         </div>
     </div>
     <!-- Loader Progress -->
-    <div class="fixed bottom-4 left-4 z-50" id="statuslines">
-        <div class="bg-secondaryCrimson-12 backdrop-blur-lg rounded-16 p-4 space-y-2">
+    <div class="fixed bottom-16px left-4 z-50" id="statuslines">
+        <div class="bg-secondaryCrimson-12 backdrop-blur-lg rounded-16px p-16px space-y-2">
             <div class="flex items-center space-x-2 text-secondaryCrimson-100 progress-item" id="script-progress">
                 <span class="font-medium text-14">Scripts</span>
                 <div class="spinner animate-spin rounded-full h-4 w-4 border-2 border-primaryCrimson-64 border-t-primaryCrimson-100"></div>
@@ -236,7 +233,7 @@
     </script>
 
     <!-- Footer -->
-    <footer class="bg-secondaryCrimson-12 p-4">
+    <footer class="bg-secondaryCrimson-12 p-16px">
         <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-center">
             <span class="text-secondaryCrimson-100">
                 Beatmap Mirror

@@ -18,3 +18,789 @@
         /* Firefox */
     }
 }
+
+/*in-game pause menu*/
+.pause-menu {
+    color: #ffffff;
+    font-size: 1.8em;
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.paused-title {
+    color: #f04747;
+    padding-top: 60px;
+    text-align: center;
+    letter-spacing: 0.16em;
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 9.5em);
+}
+
+.button-list {
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 3.75em);
+    /*shadow*/
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.6);
+    width: 120%;
+    left: -10%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.pausebutton {
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+    height: 2.5em;
+    text-align: center;
+    transform: skewX(-12deg);
+    letter-spacing: 0em;
+    transition: 0.1s ease-out all;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pausebutton:hover {
+    letter-spacing: 0.1em;
+    width: 75%;
+}
+
+.pausebutton .inner {
+    transform: skewX(19deg);
+    padding-top: 0.4em;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pausebutton.continue {
+    background: #43b581;
+}
+
+.pausebutton.retry {
+    background: #faa61a;
+}
+
+.pausebutton.quit {
+    background: #f04747;
+}
+
+/*in-game grading menu*/
+.grading {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.grading>* {
+    transition: 0.4s ease opacity;
+}
+
+.grading.transparent>* {
+    opacity: 0;
+}
+
+.grading .top {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 115px;
+}
+
+.grading .ranking {
+    position: absolute;
+    top: 35px;
+    right: 160px;
+    font-size: 3em;
+}
+
+.grading .beatmap-info {
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 120px;
+}
+
+.grading .beatmap-info .title {
+    font-style: italic;
+    font-size: 2em;
+    line-height: 1.2em;
+}
+
+.grading .beatmap-info .artist {
+    font-style: italic;
+}
+
+.grading .beatmap-info .version {
+    font-size: 1.4em;
+    line-height: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.grading .beatmap-info .mapper {
+    display: inline-block;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.grading .grade {
+    position: absolute;
+    top: 210px;
+    right: 180px;
+    font-style: italic;
+    font-size: 20em;
+    line-height: 0.6em;
+    letter-spacing: -0.08em;
+}
+
+.grading .grade.SS {
+    text-shadow: 0px 0px 40px #ff3;
+    right: 110px;
+}
+
+.grading .grade.S {
+    text-shadow: 0px 0px 40px #ff3;
+}
+
+.grading .grade.A {
+    text-shadow: 0px 0px 40px #0f0;
+}
+
+.grading .grade.B {
+    text-shadow: 0px 0px 40px #3bf;
+}
+
+.grading .grade.C {
+    text-shadow: 0px 0px 40px #90f;
+}
+
+.grading .grade.D {
+    text-shadow: 0px 0px 40px #f00;
+}
+
+.grading .grade.F {
+    color: #000;
+    text-shadow: 0px 0px 40px #fff;
+}
+
+.grading .left {
+    font-size: 1.2em;
+    position: absolute;
+    top: 130px;
+    left: 120px;
+    width: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grading .block {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.6em;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.3);
+    line-height: 1em;
+    padding-top: 1.4em;
+    padding-right: 0.2em;
+    text-align: right;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.grading .block:before {
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    color: rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+}
+
+.block.score {
+    background: #6b00c6;
+    width: 500px;
+    text-align: right;
+    padding-top: 0em;
+    line-height: 90px;
+    padding-right: 20px;
+    height: 100px;
+    font-size: 3em;
+    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.block.score:before {
+    content: "Score";
+    position: absolute;
+}
+
+.block.acc {
+    background: #abbc38;
+    width: 50%;
+    font-size: 1.8em;
+    padding-top: 1.2em;
+}
+
+.block.acc:before {
+    content: "Accuracy";
+}
+
+.block.err {
+    background: #4299a4;
+    width: 50%;
+    font-size: 1.8em;
+    padding-top: 1.2em;
+}
+
+.block.err:before {
+    content: "Hit Error";
+}
+
+.block.great {
+    background: #4293ff;
+    width: 25%;
+}
+
+.block.great:before {
+    content: "Great";
+}
+
+.block.good {
+    background: #597a00;
+    width: 25%;
+}
+
+.block.good:before {
+    content: "Good";
+}
+
+.block.meh {
+    background: #e68412;
+    width: 25%;
+}
+
+.block.meh:before {
+    content: "Meh";
+}
+
+.block.miss {
+    background: #c40b15;
+    width: 25%;
+}
+
+.block.miss:before {
+    content: "Miss";
+}
+
+.block.placeholder {
+    width: 50%;
+    box-shadow: none;
+}
+
+.block.combo {
+    background: #a64d99;
+    width: 50%;
+    font-size: 2.2em;
+    padding-top: 0.85em;
+}
+
+.block.combo:before {
+    font-size: 0.7em;
+    line-height: 1em;
+    content: "Max Combo";
+}
+
+.block.player {
+    background: #a64d99;
+    width: 100%;
+    bottom: auto;
+    font-size: 200%;
+    padding-top: 1em;
+}
+
+.block.player:before {
+    line-height: 1em;
+    content: "Player";
+}
+
+.grading .left .history-best {
+    position: absolute;
+    top: -14px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border-radius: 0.3em 0.3em 0 0;
+    color: #8df;
+}
+
+.grading .left .history-best:before {
+    content: "History Best: ";
+}
+
+.grading .fullcombo:before {
+    position: absolute;
+    content: "FC";
+    font-size: 2em;
+    font-style: italic;
+    color: #ff969c;
+    border: 5px #ff969c solid;
+    border-radius: 12px;
+    white-space: nowrap;
+    line-height: 1.1em;
+    padding-left: 0.2em;
+    padding-right: 0.3em;
+    bottom: 35px;
+    right: 400px;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grading .btn {
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.8em;
+    width: 240px;
+    height: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.1s ease-out all;
+    cursor: pointer;
+    transform: skewX(-12deg);
+}
+
+.grading .btn:hover {
+    letter-spacing: 0.06em;
+    width: 270px;
+}
+
+.grading .btn .inner {
+    padding-top: 0.4em;
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
+    transform: skewX(12deg);
+}
+
+.grading .btn.retry {
+    right: -10px;
+    background: #43b581;
+}
+
+.grading .btn.quit {
+    left: -10px;
+    background: #f04747;
+}
+
+/* Beatmap Box/List */
+.beatmap-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-right: -17px;
+    position: relative;
+}
+
+.dragbox {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    background: #eee;
+    color: #666;
+    border-radius: 6px;
+    font-size: 18px;
+    height: 200px;
+    width: 245px;
+    margin-bottom: 20px;
+    margin-right: 17px;
+}
+
+.dragbox-inner {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 16%;
+    line-height: 1.5em;
+}
+
+.beatmapbox {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    background: #21252b;
+    font-size: 18px;
+    height: 190px;
+    width: 400px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.beatmapbox:hover {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.7);
+}
+
+.beatmapcover {
+    -o-object-fit: cover;
+    object-fit: cover;
+    background: #555;
+    color: gray;
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    border-radius: 4px 4px 0 0;
+}
+
+.beatmappreview {
+    position: absolute;
+    fill: rgb(221, 221, 221);
+    margin-left: 365px;
+    margin-top: 10px;
+    width: 24px;
+}
+
+.beatmappreview:before {
+    content: "\f144";
+}
+
+.beatmapcover-overlay {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+    width: 100%;
+    height: 130px;
+    position: absolute;
+}
+
+.beatmaptitle {
+    width: 400px;
+    top: 73px;
+    left: 10px;
+    right: 10px;
+    font-size: 1.3em;
+    font-style: italic;
+    color: rgb(221, 221, 221);
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+}
+
+.beatmapartist {
+    width: 400px;
+    top: 102px;
+    left: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: rgb(221, 221, 221);
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+}
+
+.beatmapcreator {
+    top: 134px;
+    left: 10px;
+    color: #b0b7c3;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    position: absolute;
+}
+
+.beatmapapproved {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 11px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 4px 8px 2px 8px;
+}
+
+.beatmapsid {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 11px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 4px 8px 2px 8px;
+}
+
+.beatmapauthor {
+    top: 103px;
+    left: 10px;
+    color: #b0b7c3;
+    font-size: 14px;
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    position: absolute;
+}
+
+.beatmapbpm {
+    right: 10px;
+    position: absolute;
+    float: right;
+    font-style: italic;
+    color: #b0b7c3;
+    font-size: 0.8em;
+    bottom: 60px;
+}
+
+.beatmaplength {
+    top: 130px;
+    right: 10px;
+    color: #b0b7c3;
+    font-size: 0.8em;
+    font-style: italic;
+    float: right;
+    white-space: nowrap;
+    position: absolute;
+}
+
+.beatmap-difficulties {
+    position: absolute;
+    top: 160px;
+    left: 10px;
+}
+
+.beatmaplike {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 1.4em;
+}
+
+.beatmaplike.icon-heart-empty {
+    color: #5c617c;
+}
+
+.beatmaplike.icon-heart {
+    color: #f04747;
+}
+
+.beatmaplike.hint-liked::after {
+    content: "Liked!";
+    white-space: nowrap;
+    position: absolute;
+    bottom: 30px;
+    right: -8px;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 0.6em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-radius: 0.3em;
+    opacity: 0;
+    animation-name: fadeoutmy;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in;
+}
+
+/* Difficulty Area */
+.difficulty-box {
+    width: auto;
+    min-width: 360px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    animation: 0.4s unfold ease;
+    transform-origin: top left;
+}
+
+@keyframes unfold {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.difficulty-item {
+    background: #2c2c34;
+    box-shadow: 2px 2px 5px #000;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    padding: 12px;
+    height: 50px;
+    color: #8291a0;
+    white-space: nowrap;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+body:not(.script-ready) .difficulty-item {
+    cursor: wait;
+}
+
+body:not(.skin-ready) .difficulty-item {
+    cursor: wait;
+}
+
+body:not(.sound-ready) .difficulty-item {
+    cursor: wait;
+}
+
+.beatmapbox.downloading .difficulty-item {
+    cursor: wait;
+}
+
+/* Difficulty Colors */
+.difficulty-item span {
+    top: -5px;
+    left: 4px;
+    position: relative;
+}
+
+.difficulty-item:hover {
+    background: #1e404d;
+}
+
+.difficulty-item .versionline {
+    position: absolute;
+    top: 3px;
+    left: 50px;
+}
+
+.difficulty-item .version {
+    font-size: 1.1em;
+    display: inline-block;
+}
+
+.difficulty-item .mapper {
+    padding-left: 0.5em;
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.star-row {
+    position: absolute;
+    top: 28px;
+    left: 49px;
+}
+
+.star-row .imgcontainer {
+    height: 18px;
+    width: 18px;
+    margin-right: 2px;
+    display: inline-block;
+}
+
+.star-row img {
+    width: 18px;
+    position: relative;
+}
+
+.difficulty-ring {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: solid #aaa 3px;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+.difficulty-count {
+    color: #a7aebd;
+    line-height: 18px;
+    font-size: 0.8em;
+    position: relative;
+    font-weight: bold;
+    bottom: 4px;
+}
+
+.difficulty-ring.easy {
+    border-color: #88b300;
+}
+
+.difficulty-ring.normal {
+    border-color: #6cf;
+}
+
+.difficulty-ring.hard {
+    border-color: #fc2;
+}
+
+.difficulty-ring.insane {
+    border-color: #f6a;
+}
+
+.difficulty-ring.expert {
+    border-color: #86e;
+}
+
+.difficulty-ring.expert-plus {
+    border-color: #000;
+}
+
+.bigringbase {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.bigring {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: 8px;
+    left: 8px;
+    border-radius: 50%;
+    border: solid #aaa 4px;
+    background: #fff;
+}
+
+.bigring.easy {
+    border-color: #88b300;
+}
+
+.bigring.normal {
+    border-color: #6cf;
+}
+
+.bigring.hard {
+    border-color: #fc2;
+}
+
+.bigring.insane {
+    border-color: #f6a;
+}
+
+.bigring.expert {
+    border-color: #86e;
+}
+
+.bigring.expert-plus {
+    border-color: #000;
+}

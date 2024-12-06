@@ -82,7 +82,8 @@
     </main>
     <!-- Index Areas -->
     <div class="my-24px mx-16px">
-        <div class="index-are rounded-16px">
+        <!-- Popular Beatmaps -->
+        <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
             <div class="flex justify-between items-end">
                 <h2 class="text-24px font-semiBold text-primaryCrimson-100">Popular beatmaps</h2>
                 <a href="hot.html" class="text-accentCrimson-100 hover:underline text-16px">See more Popular Beatmaps</a>
@@ -91,7 +92,8 @@
             <div class="beatmap-list" id="beatmap-list-hot"></div>
         </div>
 
-        <div class="index-area rounded-16px">
+        <!-- Previously Played -->
+        <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
             <div class="flex justify-between items-end">
                 <h2 class="text-24px font-semiBold text-primaryCrimson-100">Previously Played</h2>
                 <a href="history.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16px">See your play history</a>
@@ -100,7 +102,8 @@
             <div class="beatmap-list" id="beatmap-list-history"></div>
         </div>
 
-        <div class="index-area rounded-16px">
+        <!-- Favorited Beatmaps -->
+        <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
             <div class="flex justify-between items-end">
                 <h2 class="text-24px font-semiBold text-primaryCrimson-100">Favorited Beatmaps</h2>
                 <a href="liked.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16px">See all favorited Beatmaps</a>
@@ -109,7 +112,8 @@
             <div class="beatmap-list" id="beatmap-list-liked"></div>
         </div>
 
-        <div class="index-area rounded-16px">
+        <!-- Latest Beatmaps -->
+        <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
             <div class="flex justify-between items-end">
                 <h2 class="text-24px font-semiBold text-primaryCrimson-100">Latest Beatmaps</h2>
                 <a href="new.html" class="text-accentCrimson-100 hover:underline align-text-bottom text-16px">See all latest Beatmaps</a>
@@ -118,7 +122,8 @@
             <div class="beatmap-list" id="beatmap-list-new"></div>
         </div>
 
-        <div class="index-area rounded-16px">
+        <!-- Random Beatmaps -->
+        <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
             <div class="flex justify-between items-end">
                 <h2 class="text-24px font-semiBold text-primaryCrimson-100">Random Beatmaps</h2>
                 <a onclick="genRandomList()" class="text-accentCrimson-100 hover:underline align-text-bottom cursor-pointer text-16px">
@@ -129,6 +134,10 @@
             <div class="beatmap-list" id="beatmap-list-random"></div>
         </div>
     </div>
+
+    <!-- Beatmap Boxes -->
+
+
     <!-- Loader Progress -->
     <div id="loader-progress" class="fixed bottom-0 left-0 z-50 ml-16px mb-16px bg-baseCrimson-64 rounded-12px w-256px">
         <div class="bg-secondaryCrimson-12 backdrop-blur-lg p-16px rounded-12px space-y-2">

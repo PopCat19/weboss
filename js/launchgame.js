@@ -69,6 +69,7 @@ function launchOSU(osu, beatmapid, version) {
     let pGameArea = document.getElementById("game-area");
     var pMainPage = document.getElementById("main-page");
     var pNav = document.getElementById("main-nav");
+    var pLoaderProgress = document.getElementById("loader-progress");
     pGameArea.appendChild(app.view);
     if (game.autoplay) {
         pGameArea.classList.remove("shownomouse");
@@ -89,14 +90,23 @@ function launchOSU(osu, beatmapid, version) {
     }
     pMainPage.setAttribute("hidden", "");
     pNav.setAttribute("style", "display: none");
+    pLoaderProgress.setAttribute("style", "display: none");
+    console.log("Showing game area");
     pGameArea.removeAttribute("hidden");
+    console.log("Game area offsetTop:", pGameArea.offsetTop);
+    console.log("Game area offsetHeight:", pGameArea.offsetHeight);
+    console.log("Scrolling to game area");
+    pGameArea.scrollIntoView();
+    console.log("Game area scrolled into view");
 
     var gameLoop;
     // set quit callback
     window.quitGame = function() {
+        console.log("Quitting game");
         pGameArea.setAttribute("hidden", "");
         pMainPage.removeAttribute("hidden");
         pNav.removeAttribute("style");
+        pLoaderProgress.removeAttribute("style");
         document.body.classList.remove("gaming");
         // restore page scroll position
         document.body.scrollTop = scrollTop;

@@ -3,6 +3,7 @@
         "build:css": "sass css/main.scss css/dist/main.css"
     },
     "devDependencies": {
+        "@catppuccin/tailwindcss": "^0.1.6",
         "autoprefixer": "^10.4.20",
         "tailwindcss": "^3.4.16"
     }

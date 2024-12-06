@@ -43,12 +43,11 @@
                     <a href="hot.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">Popular</a>
                     <a href="browse.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">Browse</a>
                 </div>
-
                 <!-- Center Group: Search Box -->
-                <div class="flex items-center">
-                    <form action="search.html" class="flex items-center">
-                        <input type="text" name="q" placeholder="Search or enter ID" class="w-48 h-10 px-3 text-12px border-none bg-baseCrimson-100 text-primaryCrimson-100 font-medium placeholder-secondaryCrimson-32 rounded-l-12px focus:outline-none focus:ring-0" />
-                        <button type="submit" class="h-10 border-none bg-secondaryCrimson-12 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold px-3 rounded-r-12px flex items-center justify-center">
+                <div class="flex items-center flex-1 mx-16px">
+                    <form action="search.html" class="flex items-center flex-1">
+                        <input type="text" name="q" placeholder="Search or enter ID" class="flex-grow h-10 px-3 text-12px border-none bg-baseCrimson-100 text-primaryCrimson-100 font-medium placeholder-secondaryCrimson-32 rounded-l-12px focus:outline-none focus:ring-0" />
+                        <button type="submit" class="h-10 w-10 border-none bg-secondaryCrimson-12 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold px-3 rounded-r-12px flex items-center justify-center">
                             <img src="/img/search.svg" alt="Search" class="w-5 h-5 text-secondaryCrimson-100" />
                         </button>
                     </form>
@@ -65,7 +64,7 @@
     </nav>
 
     <!-- Main Page -->
-    <main class="main-page flex flex-col w-full mt-80px px-16px" id="main-page">
+    <main class="main-page flex flex-col w-full mt-80px px-16px max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto" id="main-page">
         <div class="site-notice-container">
             <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 p-16px font-medium rounded-12px text-16px">
                 Note: This site is still in-development... Expect bugs --
@@ -81,7 +80,7 @@
         </div>
     </main>
     <!-- Index Areas -->
-    <div class="my-24px mx-16px">
+    <div class="my-24px max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto">
         <!-- Popular Beatmaps -->
         <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
             <div class="flex justify-between items-end">
@@ -144,15 +143,15 @@
             <div class="text-center text-primaryCrimson-100 text-14px font-bold mb-2">Status - Download</div>
             <div class="flex justify-between items-center space-x-2 text-secondaryCrimson-100 progress-item" id="script-progress">
                 <span class="font-medium text-12px">Scripts</span>
-                <div class="circle animate-ping rounded-full size-2 bg-accentCrimson-100"></div>
+                <div class="circle animate-pulse rounded-full size-4 bg-secondaryCrimson-12"></div>
             </div>
             <div class="flex justify-between items-center space-x-2 text-secondaryCrimson-100 progress-item" id="skin-progress">
                 <span class="font-medium text-12px">Skin</span>
-                <div class="circle animate-ping rounded-full size-2 bg-accentCrimson-100"></div>
+                <div class="circle animate-pulse rounded-full size-4 bg-secondaryCrimson-12"></div>
             </div>
             <div class="flex justify-between items-center space-x-2 text-secondaryCrimson-100 progress-item" id="sound-progress">
                 <span class="font-medium text-12px">Hitsounds</span>
-                <div class="circle animate-ping rounded-full size-2 bg-accentCrimson-100"></div>
+                <div class="circle animate-pulse rounded-full size-4 bg-secondaryCrimson-12"></div>
             </div>
             <div class="mt-2">
                 <!-- Add download progress bar here -->
@@ -174,7 +173,7 @@
                 const circle = progressItem.querySelector('.circle');
                 if (!circle) return;
 
-                circle.classList.remove('animate-ping', 'bg-accentCrimson-100', 'size-3');
+                circle.classList.remove('animate-pulse', 'bg-secondaryCrimson-12', 'size-4');
 
                 if (isSuccess) {
                     circle.classList.add('bg-secondaryCrimson-100', 'size-4');

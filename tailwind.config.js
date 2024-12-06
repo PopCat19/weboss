@@ -109,16 +109,8 @@ module.exports = {
                 '256px': '256px',
                 '512px': '512px',
             },
-            typography: {
-                DEFAULT: {
-                    css: {
-                        fontFamily: 'Fredoka',
-                        fontWeight: 'semi-bold',
-                        fontSize: '16px',
-                        lineHeight: '24px',
-                        letterSpacing: '0.04em',
-                    },
-                },
+            fontFamily: {
+                fredoka: ['Fredoka', 'sans-serif'],
             },
             fontSize: {
                 '4px': '4px',
@@ -136,10 +128,6 @@ module.exports = {
                 '128px': '128px',
                 '256px': '256px',
                 '512px': '512px',
-            },
-            fontWeight: {
-                semiBold: '600',
-                medium: '500',
             },
             lineHeight: {
                 '4px': '4px',

@@ -15,53 +15,7 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="w-full h-42 overflow-y-scroll no-scrollbar">
-    <!-- Game Area -->
-    <div class="game-area overflow-hidden h-screen" id="game-area" hidden></div>
-    <div class="pause-menu" id="pause-menu" hidden>
-        <div class="paused-title">Paused</div>
-        <div class="button-list">
-            <div class="pausebutton continue" id="pausebtn-continue">
-                <div class="inner">Continue</div>
-            </div>
-            <div class="pausebutton retry" id="pausebtn-retry">
-                <div class="inner">Retry</div>
-            </div>
-            <div class="pausebutton quit" id="pausebtn-quit">
-                <div class="inner">Quit</div>
-            </div>
-        </div>
-    </div>
-    <!-- Nav Bar -->
-    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-baseCrimson-64 backdrop-blur-lg">
-        <div class="bg-secondaryCrimson-12">
-            <div class="flex items-center justify-between px-16px py-8px">
-                <!-- Left Group: Logo, Navigation Links -->
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-24px font-bold text-primaryCrimson-100 mr-2">weboss!</a>
-                    <a href="new.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">New</a>
-                    <a href="hot.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">Popular</a>
-                    <a href="browse.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">Browse</a>
-                </div>
-                <!-- Center Group: Search Box -->
-                <div class="flex items-center flex-1 mx-16px">
-                    <form action="search.html" class="flex items-center flex-1">
-                        <input type="text" name="q" placeholder="Search or enter ID" class="flex-grow h-10 px-3 text-12px border-none bg-baseCrimson-100 text-primaryCrimson-100 font-medium placeholder-secondaryCrimson-32 rounded-l-12px focus:outline-none focus:ring-0" />
-                        <button type="submit" class="h-10 w-10 border-none bg-secondaryCrimson-12 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold px-3 rounded-r-12px flex items-center justify-center">
-                            <img src="/img/search.svg" alt="Search" class="w-5 h-5 text-secondaryCrimson-100" />
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Right Group: Action Links -->
-                <div class="flex items-center space-x-4">
-                    <a href="liked.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">Favorites</a>
-                    <a href="faq.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">FAQ</a>
-                    <a href="settings.html" class="bg-secondaryCrimson-12 hover:text-white-100 text-secondaryCrimson-100 font-bold py-8px px-16px rounded-12px">Settings</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body class="w-full overflow-y-scroll no-scrollbar">
 
     <!-- Main Page -->
     <main class="main-page flex flex-col w-full mt-80px px-16px max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto" id="main-page">
@@ -137,117 +91,7 @@
     <!-- Beatmap Boxes -->
 
 
-    <!-- Loader Progress -->
-    <div id="loader-progress" class="fixed bottom-0 left-0 z-50 ml-16px mb-16px bg-baseCrimson-64 rounded-12px w-256px">
-        <div class="bg-secondaryCrimson-12 backdrop-blur-lg p-16px rounded-12px space-y-2">
-            <div class="text-center text-primaryCrimson-100 text-14px font-bold mb-2">Status - Download</div>
-            <div class="flex justify-between items-center space-x-2 text-secondaryCrimson-100 progress-item" id="script-progress">
-                <span class="font-medium text-12px">Scripts</span>
-                <div class="circle animate-pulse rounded-full size-4 bg-secondaryCrimson-12"></div>
-            </div>
-            <div class="flex justify-between items-center space-x-2 text-secondaryCrimson-100 progress-item" id="skin-progress">
-                <span class="font-medium text-12px">Skin</span>
-                <div class="circle animate-pulse rounded-full size-4 bg-secondaryCrimson-12"></div>
-            </div>
-            <div class="flex justify-between items-center space-x-2 text-secondaryCrimson-100 progress-item" id="sound-progress">
-                <span class="font-medium text-12px">Hitsounds</span>
-                <div class="circle animate-pulse rounded-full size-4 bg-secondaryCrimson-12"></div>
-            </div>
-            <div class="mt-2">
-                <!-- Add download progress bar here -->
-                <div id="statuslines" class="max-h-80px overflow-y-auto">
-                    <!-- Download progress bars will be added here -->
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script>
-        // Loader States Utility
-        const LoaderStates = {
-
-            markAsFinished(elementId, isSuccess = true) {
-                const progressItem = document.getElementById(elementId);
-                if (!progressItem) return;
-
-                const circle = progressItem.querySelector('.circle');
-                if (!circle) return;
-
-                circle.classList.remove('animate-pulse', 'bg-secondaryCrimson-12', 'size-4');
-
-                if (isSuccess) {
-                    circle.classList.add('bg-secondaryCrimson-100', 'size-4');
-                } else {
-                    circle.classList.add('bg-accentCrimson-100', 'size-4');
-                }
-            },
-
-            // New method to check and update loader states based on body classes
-            updateLoaderStates() {
-                const bodyClasses = document.body.classList;
-                const progressItems = {
-                    'script-ready': 'script-progress',
-                    'skin-ready': 'skin-progress',
-                    'sound-ready': 'sound-progress'
-                };
-
-                Object.entries(progressItems).forEach(([bodyClass, progressId]) => {
-                    if (bodyClasses.contains(bodyClass)) {
-                        this.markAsFinished(progressId);
-                    }
-                });
-            }
-        };
-
-        // Global access to markAsFinished
-        window.markAsFinished = LoaderStates.markAsFinished.bind(LoaderStates);
-
-        // Add MutationObserver to watch for body class changes
-        const bodyObserver = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                    LoaderStates.updateLoaderStates();
-                }
-            });
-        });
-
-        // Start observing the body element
-        bodyObserver.observe(document.body, {
-            attributes: true,
-            attributeFilter: ['class']
-        });
-
-        // Initial check in case classes are already present
-        document.addEventListener('DOMContentLoaded', () => {
-            LoaderStates.updateLoaderStates();
-        });
-
-        // Optional: Error Handling for Game Initialization
-        window.addEventListener('error', (event) => {
-            console.error('Unhandled error during game initialization:', event.error);
-
-            // Mark specific progress items as failed if needed
-            if (event.filename.includes('initgame.js')) {
-                markAsFinished('script-progress', false);
-                markAsFinished('skin-progress', false);
-                markAsFinished('sound-progress', false);
-            }
-        });
-    </script>
-
-    <!-- Footer -->
-    <footer class="bg-secondaryCrimson-12 pb-40px p-16px">
-        <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-center">
-            <span class="text-secondaryCrimson-100">
-                Beatmap Mirror
-                <a href="https://catboy.best/" class="text-accentCrimson-100 hover:text-accentCrimson-80 hover:underline">Mino</a>
-            </span>
-            <span class="text-secondaryCrimson-100">
-                Source code:
-                <a href="https://github.com/PopCat19/weboss" class="text-accentCrimson-100 hover:text-accentCrimson-80 hover:underline">Github</a>
-            </span>
-        </div>
-    </footer>
 
     <!-- Beatmap Index Scripts -->
     <script src="js/launchgame.js"></script>
@@ -256,6 +100,13 @@
     <script src="js/settings.js"></script>
     <script src="js/jsloader.js"></script>
     <script src="js/lib/localforage.min.js"></script>
+    <script src="js/ui/nav.js"></script>
+    <script src="js/ui/loader.js"></script>
+    <script src="js/ui/footer.js"></script>
+    <script src="js/ui/layout.js"></script>
+    <script>
+        Weboss.Layout.init({ active: '' });
+    </script>
     <script>
         // Recently played
         if (window.localforage) {

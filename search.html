@@ -1,124 +1,62 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="bg-baseCrimson-100">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+</style>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search</title>
-    <link rel=”canonical” href=”https://webosu.online/”/>
-    <meta name="description" content="Search through over 1,000,000 beatmaps hosted by Mino to find your new favorite!">
+    <meta name="description" content="Search beatmaps">
     <link rel="icon" href="img/favicon.png">
-    <link rel="stylesheet" href="css/picnic.min.css">
-    <link rel="stylesheet"href="css/main.css">
-    <link rel="stylesheet"href="css/font.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="w-full overflow-y-scroll no-scrollbar">
+    <main class="main-page flex flex-col w-full mt-80px px-16px max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto" id="main-page">
+        <div class="site-notice bg-secondaryCrimson-32 text-baseCrimson-100 p-16px font-medium rounded-12px text-16px mb-24px">
+            Note: This site is still in-development. Expect bugs.
+        </div>
+        <div class="index-area rounded-16px bg-white shadow-md p-4 mb-4">
+            <h2 class="text-24px font-semiBold text-primaryCrimson-100" id="search-title">Search Results</h2>
+            <div class="h-1 w-full rounded-16px bg-secondaryCrimson-12 mt-2 mb-4"></div>
+            <div class="beatmap-list" id="beatmap-list"></div>
+            <button id="btnmore" class="w-full mt-4 py-12px bg-secondaryCrimson-12 hover:bg-secondaryCrimson-32 text-secondaryCrimson-100 font-bold rounded-12px border-none cursor-pointer text-16px">
+                Load More
+            </button>
+        </div>
+    </main>
+
     <script src="js/launchgame.js"></script>
     <script src="js/downloader.js"></script>
     <script src="js/addbeatmaplist.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/jsloader.js"></script>
-    <script src="js\lib\localforage.min.js"></script>
-</head>
-<body>
-    <div class="game-area" id="game-area" hidden>
-    </div>
-    <div class="pause-menu" id="pause-menu" hidden>
-        <div class="paused-title">Paused</div>
-        <div class="button-list">
-            <div class="pausebutton continue" id="pausebtn-continue">
-                <div class="inner">Continue</div>
-            </div>
-            <div class="pausebutton retry" id="pausebtn-retry">
-                <div class="inner">Retry</div>
-            </div>
-            <div class="pausebutton quit" id="pausebtn-quit">
-                <div class="inner">Quit</div>
-            </div>
-        </div>
-    </div>
-    <!--Nav Bar-->
-    <nav id="main-nav">
-        <div class="nav-link">
-            <a href="index.html" class="brand">webosu!</a>
-            <a href="new.html" class="pseudo button">New</a>
-            <a href="hot.html" class="pseudo button">Popular</a>
-            <a href="browse.html" class="pseudo button">Browse</a>
-        </div>
-        <div class="nav-search">
-            <form action="search.html">
-                <container id="searchbar" class="searchbar">
-                    <input type="text" name="q" placeholder="Seach for beatmap or enter a Set ID" />
-                </container>
-            </form>
-        </div>
-        <div class="nav-tool">
-            <a href="liked.html" class="pseudo button">Favorites</a>
-            <a href="settings.html" class="pseudo button">Settings</a>
-            <input type="username" id="userreg" placeholder="Type name" />
-        </div>
-    </nav>
-    <div class="main-page" id="main-page">
-        <div class="main-content">
-            <br>
-            <div class="beatmap-list" id="beatmap-list">
-                <!-- to be filled in script -->
-            </div>
-            <div class="button" style="width:100%; margin-bottom: 10px;" id="btnmore">Load More</div>
-        </div>
-        <!-- <div class="side-panel"> to be activated in script </div> -->
-        <div class="statuslines" id="statuslines">
-            <div class="progress" id="script-progress">
-                Scripts
-                <div class="lds-dual-ring"></div>
-            </div>
-            <div class="progress" id="skin-progress">
-                Skin
-                <div class="lds-dual-ring"></div>
-            </div>
-            <div class="progress" id="sound-progress">
-                Hitsounds
-                <div class="lds-dual-ring"></div>
-            </div>
-        </div>
-    </div>
+    <script src="js/ui/nav.js"></script>
+    <script src="js/ui/loader.js"></script>
+    <script src="js/ui/footer.js"></script>
+    <script src="js/ui/layout.js"></script>
     <script>
-    //Make enter work
-    const input = document.getElementById("userreg");
-    const username = window.localStorage.getItem("username")
-    if(username) input.value = username;
-    input.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            saveUser();
+        Weboss.Layout.init({ active: '' });
+        var url = new URL(window.location.href);
+        var keyword = url.searchParams.get("q");
+        if (keyword) {
+            document.getElementById("search-title").innerText = 'Results for "' + keyword + '"';
         }
-    });
-    //Store username in localstorage
-    function saveUser( name ) {
-        const player = document.getElementById('userreg').value;
-        window.localStorage.setItem("username", player);
-        document.cookie = 'username=' + player;
-      }
-        let url = new URL(window.location.href);
-        let keyword = url.searchParams.get("q");
-        var cur = 0;
+        var p = 0;
         if (keyword == parseInt(keyword, 10)) {
-            // Checks for SID
             addBeatmapSid(keyword);
+            document.getElementById("btnmore").style.display = "none";
         } else {
-            // Insert keyword
-            addBeatmapList(`https://catboy.best/api/v2/search?query=${keyword}&status=1&status=2&status=3&status=4&sort=id:asc`);
+            addBeatmapList("https://catboy.best/api/v2/search?query=" + encodeURIComponent(keyword || "") + "&status=1&status=2&status=3&status=4&sort=id:asc");
         }
-        document.getElementById("btnmore").onclick = function () {
-          let p = 0;
-            if (typeof (window.list_endid) == "undefined") {
-                addBeatmapList(`https://catboy.best/api/v2/search?q=${keyword}&p=${p}&status=1&status=2&status=3&status=4&sort=id:asc`);
-            } else {
-                if (window.list_endid == 0)
-                    document.getElementById("btnmore").innerText = "There's no more beatmaps ;-;";
-                else
-                addBeatmapList(`https://catboy.best/api/v2/search?q=${keyword}&p=${p}&status=1&status=2&status=3&status=4&sort=id:asc`);
+        document.getElementById("btnmore").onclick = function() {
+            if (typeof window.list_endid !== "undefined" && window.list_endid === 0) {
+                document.getElementById("btnmore").innerText = "No more results";
+                return;
             }
-            p++
-        }
+            addBeatmapList("https://catboy.best/api/v2/search?q=" + encodeURIComponent(keyword || "") + "&p=" + p + "&status=1&status=2&status=3&status=4&sort=id:asc");
+            p++;
+        };
     </script>
 </body>
 </html>

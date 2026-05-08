@@ -19,6 +19,162 @@
     }
 }
 
+/* Settings panel helpers */
+.option-name {
+    float: left;
+}
+
+.option-control {
+    float: right;
+    position: relative;
+}
+
+.slider {
+    width: 180px;
+}
+
+.range-indicator {
+    position: absolute;
+    background: #1E0B10;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 30px;
+    text-align: center;
+    color: #FFC2D1;
+    border-radius: 8px;
+    display: inline-block;
+    line-height: 2em;
+    bottom: 150%;
+    left: 0px;
+    opacity: 0.9;
+    margin-left: -1%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.range-indicator.inline-value {
+    position: static;
+    background: transparent;
+    color: #FF99B2;
+    font-size: 12px;
+    padding: 0;
+    height: auto;
+    bottom: auto;
+    opacity: 1;
+    transform: none;
+    min-width: 36px;
+    text-align: right;
+    line-height: 1;
+}
+
+.range-indicator.inline-value:after {
+    display: none;
+}
+
+.range-indicator:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #1E0B10;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
+
+.non-default {
+    border-left: 4px solid rgba(255, 190, 0, 0.8);
+}
+
+input[type="button"] {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    transition: all 0.2s ease;
+    color: #FF99B2;
+    font-size: 14px;
+    line-height: 17px;
+    height: 24px;
+    margin-left: 5px;
+    min-width: 70px;
+    background: transparent;
+    border: none;
+}
+
+input[type="button"]:hover {
+    color: #FFC2D1;
+}
+
+input[type="button"].using {
+    background: #FF4775;
+    color: #fff;
+    border-radius: 8px;
+    padding: 2px 8px;
+}
+
+input[type="button"].warnbtn {
+    background: #1E0B10;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-block;
+    color: #FF99B2;
+    font-size: 16px;
+    text-align: center;
+    padding: 12px 20px 14px;
+    height: auto;
+}
+
+input[type="button"].warnbtn:hover {
+    background: #FF4775;
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    height: 22px;
+    margin: 0;
+    position: absolute;
+    opacity: 0;
+    width: 44px;
+    z-index: 2;
+}
+
+input[type="checkbox"]+span {
+    background: #3D3545;
+    border-radius: 12px;
+    display: inline-block;
+    height: 22px;
+    position: relative;
+    width: 44px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]+span::after {
+    background: #FFC2D1;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked+span {
+    background: #FF4775;
+}
+
+input[type="checkbox"]:checked+span::after {
+    left: 25px;
+}
+
 /*in-game pause menu*/
 .pause-menu {
     color: #ffffff;
